@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cnn-captcha"
+version = "0.1.0"
+description = ""
+authors = ["SharzyL <me@sharzy.in>"]
+readme = "README.md"
+packages = [{include = "recognize.py"}]
+
+[tool.poetry.dependencies]
+python = "3.6.13"
+tensorflow-gpu = "1.3.0"
+captcha = "0.3"
+numpy = "1.16.2"
+flask = "2.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

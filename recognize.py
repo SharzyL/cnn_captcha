@@ -15,10 +15,14 @@ from cnnlib.recognition_object import Recognizer
 import time
 from flask import Flask, request, jsonify, Response
 from PIL import Image
+import logging
+
 
 # 默认使用CPU
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+if 'TF_CPP_MIN_LOG_LEVEL' not in os.environ:
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = "3"
 
 with open("conf/sample_config.json", "r") as f:
     sample_conf = json.load(f)
@@ -59,6 +63,9 @@ def up_image():
     if request.method == 'POST' and request.files.get('image_file'):
         timec = str(time.time()).replace(".", "")
         file = request.files.get('image_file')
+        if not file:
+            return '"image_file" not found', 400
+        print(file)
         img = file.read()
         img = BytesIO(img)
         img = Image.open(img, mode="r")
@@ -69,10 +76,6 @@ def up_image():
         e = time.time()
         print("识别结果: {}".format(value))
         # 保存图片
-        print("保存图片： {}{}_{}.{}".format(api_image_dir, value, timec, image_suffix))
-        file_name = "{}_{}.{}".format(value, timec, image_suffix)
-        file_path = os.path.join(api_image_dir + file_name)
-        img.save(file_path)
         result = {
             'time': timec,   # 时间戳
             'value': value,  # 预测的结果
@@ -88,7 +91,7 @@ def up_image():
 
 if __name__ == '__main__':
     app.run(
-        host='0.0.0.0',
+        host='127.0.0.1',
         port=6000,
         debug=True
     )

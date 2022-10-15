@@ -1,0 +1,77 @@
+{
+  "nodes": {
+    "cu8nixpkgs": {
+      "locked": {
+        "lastModified": 1612817315,
+        "narHash": "sha256-PfadbCHb63WBTdb+7AosgzOWkimPKNETcOIRn+bP/aU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bed08131cd29a85f19716d9351940bdc34834492",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bed08131cd29a85f19716d9351940bdc34834492",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1665643254,
+        "narHash": "sha256-IBVWNJxGCsshwh62eRfR6+ry3bSXmulB3VQRzLQo3hk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ba187fbdc5e35322c7dff556ef2c47bddfd6e8d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "py36nixpkgs": {
+      "locked": {
+        "lastModified": 1624913309,
+        "narHash": "sha256-HHZTzHgLuoOmTrHckl9eGG8UWTp32pYXmCoOjgQYIB4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "860b56be91fb874d48e23a950815969a7b832fbc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "860b56be91fb874d48e23a950815969a7b832fbc",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "cu8nixpkgs": "cu8nixpkgs",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "py36nixpkgs": "py36nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
